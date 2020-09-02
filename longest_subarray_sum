@@ -2,17 +2,14 @@
 
 function longSubArraySum(arr) {
 
-    let i = 0;
-    let csum=0, msum=0;
-    let sidx=0, eidx=-1;
-    while(i < arr.length) {
-        csum = csum + arr[i];
-        if (msum < csum) msum = csum, eidx = i;
-        if (csum < 0) csum = 0, sidx=i+1, edix=i-1;
-        i+=1;
+    ptr=0,current_sum=0, max_sum=0, start_index=0, end_index=-1;
+    loop until ptr < array.length {
+        current_sum = current_sum + array[ptr];
+        if (max_sum < current_sum) max_sum = current_sum, end_index = i;
+        if (current_sum < 0) current_sum = 0, start_index=ptr+1, end_index=ptr-1;
+        ptr+=1;
     }
-
-    console.log(arr, [sidx, eidx], msum);
 }
 
-longSubArraySum([1,2,6,-8,3,2]);
+# example 1
+[1,2,6,-8,3,2]
