@@ -1,0 +1,18 @@
+# longest sub array sum
+
+function longSubArraySum(arr) {
+
+    let i = 0;
+    let csum=0, msum=0;
+    let sidx=0, eidx=-1;
+    while(i < arr.length) {
+        csum = csum + arr[i];
+        if (msum < csum) msum = csum, eidx = i;
+        if (csum < 0) csum = 0, sidx=i+1, edix=i-1;
+        i+=1;
+    }
+
+    console.log(arr, [sidx, eidx], msum);
+}
+
+longSubArraySum([1,2,6,-8,3,2]);
